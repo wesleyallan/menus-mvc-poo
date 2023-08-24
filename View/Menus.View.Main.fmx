@@ -1,0 +1,24 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Main'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Size.Width = 201.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object lbVersion: TLabel
+    Position.X = 520.000000000000000000
+    Position.Y = 463.000000000000000000
+    Text = 'lbVeresion'
+    TabOrder = 1
+  end
+end

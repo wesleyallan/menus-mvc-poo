@@ -1,0 +1,123 @@
+object frmProduct: TfrmProduct
+  Left = 0
+  Top = 0
+  Caption = 'Produtos'
+  ClientHeight = 436
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Size.Width = 640.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lbProduct: TLabel
+      Align = Contents
+      Size.Width = 640.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'Produtos'
+      TabOrder = 0
+    end
+  end
+  object ltMenu: TLayout
+    Align = Left
+    Position.Y = 145.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 291.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+  end
+  object StringGrid1: TStringGrid
+    Align = Client
+    CanFocus = True
+    ClipChildren = True
+    Size.Width = 455.000000000000000000
+    Size.Height = 291.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 451.000000000000000000
+    Viewport.Height = 266.000000000000000000
+  end
+  object ltCrud: TLayout
+    Align = Top
+    Position.Y = 40.000000000000000000
+    Size.Width = 640.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    object edtShortDescription: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      Position.X = 161.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 344.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object edtCode: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 161.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 124.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object btnSave: TButton
+      Position.X = 425.000000000000000000
+      Position.Y = 70.000000000000000000
+      TabOrder = 5
+      Text = 'Salvar'
+      OnClick = btnSaveClick
+    end
+    object btnEdit: TButton
+      Position.X = 249.000000000000000000
+      Position.Y = 70.000000000000000000
+      TabOrder = 4
+      Text = 'Editar'
+      OnClick = btnEditClick
+    end
+    object btnDelete: TButton
+      Position.X = 337.000000000000000000
+      Position.Y = 70.000000000000000000
+      TabOrder = 2
+      Text = 'Deletar'
+      OnClick = btnDeleteClick
+    end
+    object brnNew: TButton
+      Position.X = 161.000000000000000000
+      Position.Y = 70.000000000000000000
+      TabOrder = 3
+      Text = 'Novo'
+      OnClick = brnNewClick
+    end
+  end
+  object DataSource1: TDataSource
+    OnDataChange = DataSource1DataChange
+    Left = 88
+    Top = 360
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSource = DataSource1
+    ScopeMappings = <>
+    Left = 128
+    Top = 288
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 293
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = StringGrid1
+      Columns = <>
+    end
+  end
+end
