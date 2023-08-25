@@ -10,6 +10,7 @@ uses
 type
   TModelConnectionFiredac = class(TInterfacedObject, IModelConnection, IModelConnectionParams)
   private
+    class var FInstance : TModelConnectionFiredac;
     FConnection : TFDConnection;
     FDGUIxWaitCursor : TFDGUIxWaitCursor;
     FDPhysFBDriverLink : TFDPhysFBDriverLink;
@@ -101,7 +102,10 @@ end;
 
 class function TModelConnectionFiredac.New: IModelConnection;
 begin
-  Result := Self.Create;
+  if not Assigned(FInstance) then
+    FInstance := Self.Create;
+
+  Result := FInstance;
 end;
 
 function TModelConnectionFiredac.Params: IModelConnectionParams;
