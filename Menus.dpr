@@ -32,7 +32,12 @@ uses
   Menus.Controller.Connections.Factory.DataSet in 'Controller\Connections\Menus.Controller.Connections.Factory.DataSet.pas',
   Menus.Controller.Entity.Interfaces in 'Controller\Entity\Menus.Controller.Entity.Interfaces.pas',
   Menus.Controller.Entity.Product in 'Controller\Entity\Menus.Controller.Entity.Product.pas',
-  Menus.Controller.Entity.Factory in 'Controller\Entity\Menus.Controller.Entity.Factory.pas';
+  Menus.Controller.Entity.Factory in 'Controller\Entity\Menus.Controller.Entity.Factory.pas',
+  Menus.Controller.Connections.Facade in 'Controller\Connections\Menus.Controller.Connections.Facade.pas',
+  Menus.Controller.Interfaces in 'Controller\Menus.Controller.Interfaces.pas',
+  Menus.Controller.Facade in 'Controller\Menus.Controller.Facade.pas',
+  Menus.Controller.Entity.Facade in 'Controller\Entity\Menus.Controller.Entity.Facade.pas',
+  Menus.Controller.ListBox.Facade in 'Controller\Menus\Menus.Controller.ListBox.Facade.pas';
 
 {$R *.res}
 

@@ -4,13 +4,13 @@ interface
 
 uses
   Menus.Controller.Entity.Interfaces, Menus.Model.Connections.Interfaces,
-  Menus.Model.Entity.Interfaces, Data.DB;
+  Menus.Model.Entity.Interfaces, Data.DB,
+  Menus.Controller.Connections.Interfaces;
 
 type
   TControllerEntityProduct = class(TInterfacedObject, IControllerEntity)
   private
-    FConnection : IModelConnection;
-    FDataSet : IModelDataSet;
+    FFacade : IControllerConnectionsFacade;
     FEntity :  IModelEntity;
   public
     constructor Create;
@@ -24,14 +24,12 @@ implementation
 { TControllerEntityProduct }
 
 uses
-  Menus.Controller.Connections.Factory.Connection, Menus.Controller.Connections.Factory.DataSet,
-  Menus.Model.Entity.Factory;
+  Menus.Model.Entity.Factory, Menus.Controller.Connections.Facade;
 
 constructor TControllerEntityProduct.Create;
 begin
-  FConnection := TControllerConnectionsFactoryConnection.New.Connection;
-  FDataSet := TControllerConnectionsFactoryDataSet.New.DataSet(FConnection);
-  FEntity := TModelEntityFactory.New.Products(FDataSet);
+  FFacade := TControllerConnectionsFacade.New;
+  FEntity := TModelEntityFactory.New.Products(FFacade.IDataset);
 end;
 
 destructor TControllerEntityProduct.Destroy;

@@ -13,6 +13,7 @@ type
     lbVersion: TLabel;
     procedure FormCreate(Sender: TObject);
   private
+    procedure ShowConnectionConfig;
     { Private declarations }
   public
     { Public declarations }
@@ -26,9 +27,15 @@ implementation
 {$R *.fmx}
 
 uses
-  Menus.Controller.ListBox.Factory;
+  Menus.Controller.Facade;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+  ShowConnectionConfig;
+  TControllerFacade.New.Menu.ListBox.Main(Layout1).Show;
+end;
+
+procedure TfrmMain.ShowConnectionConfig;
 begin
   {$IFDEF FIREDAC}
     lbVersion.Text := 'Conectado via FireDAC';
@@ -37,7 +44,6 @@ begin
     lbVersion:= 'Conectado com Zeos';
   {$ENDIF}
 
-  TControllerListBoxFactory.New.Main(Layout1).Show;
 end;
 
 end.

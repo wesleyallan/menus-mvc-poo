@@ -165,6 +165,11 @@
         <DCCReference Include="Controller\Entity\Menus.Controller.Entity.Interfaces.pas"/>
         <DCCReference Include="Controller\Entity\Menus.Controller.Entity.Product.pas"/>
         <DCCReference Include="Controller\Entity\Menus.Controller.Entity.Factory.pas"/>
+        <DCCReference Include="Controller\Connections\Menus.Controller.Connections.Facade.pas"/>
+        <DCCReference Include="Controller\Menus.Controller.Interfaces.pas"/>
+        <DCCReference Include="Controller\Menus.Controller.Facade.pas"/>
+        <DCCReference Include="Controller\Entity\Menus.Controller.Entity.Facade.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Facade.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

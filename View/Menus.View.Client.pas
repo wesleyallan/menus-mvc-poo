@@ -27,11 +27,11 @@ implementation
 {$R *.fmx}
 
 uses
-  Menus.Controller.ListBox.Factory;
+  Menus.Controller.Facade;
 
 procedure TfrmClient.FormCreate(Sender: TObject);
 begin
-  TControllerListBoxFactory.New.Client(Layout1).Show;
+  TControllerFacade.New.Menu.ListBox.Client(Layout1).Show;
 end;
 
 initialization

@@ -16,6 +16,12 @@ type
     function DataSet(Connection : IModelConnection) : IModelDataSet;
   end;
 
+  IControllerConnectionsFacade = interface
+    ['{F17FB23B-5D1A-4B29-BF8F-AFF21624A9AF}']
+    function IConnection : IModelConnection;
+    function IDataset : IModelDataSet;
+  end;
+
 implementation
 
 end.

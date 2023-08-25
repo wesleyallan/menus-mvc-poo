@@ -16,6 +16,11 @@ type
     function Product : IControllerEntity;
   end;
 
+  IControllerEntityFacade = interface
+    ['{CEFDA096-49EE-4936-8026-A314500C856C}']
+    function Entity : IControllerEntityFactory;
+  end;
+
 implementation
 
 end.

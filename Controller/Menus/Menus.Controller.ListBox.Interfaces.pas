@@ -55,6 +55,12 @@ type
     procedure Show;
   end;
 
+  IControllerListBoxFacade = interface
+    ['{B84DA150-95BC-400D-8DFB-B6CA483B434B}']
+    function ListBox : IControllerListBoxFactory;
+    function ListBoxItem : IControllerListBoxItensFactory;
+  end;
+
 implementation
 
 end.

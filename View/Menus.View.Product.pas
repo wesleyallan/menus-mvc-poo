@@ -3,12 +3,13 @@ unit Menus.View.Product;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Layouts, FMX.Controls.Presentation, FMX.Types, System.Rtti,
   FMX.Grid.Style, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid,
-  System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
-  Data.Bind.Grid, Data.Bind.DBScope, FMX.ScrollBox, FMX.Grid, Data.DB,
-  Menus.Controller.Entity.Interfaces, FMX.Edit;
+  System.Bindings.Outputs, Fmx.Bind.Editors, FMX.Edit, FMX.ScrollBox, FMX.Grid,
+  Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope, Data.DB,
+  Menus.Controller.Entity.Interfaces;
 
 type
   TfrmProduct = class(TForm)
@@ -49,7 +50,7 @@ implementation
 {$R *.fmx}
 
 uses
-  Menus.Controller.ListBox.Factory, Menus.Controller.Entity.Factory;
+  Menus.Controller.Facade;
 
 procedure TfrmProduct.brnNewClick(Sender: TObject);
 begin
@@ -86,8 +87,8 @@ end;
 
 procedure TfrmProduct.FormCreate(Sender: TObject);
 begin
-  TControllerListBoxFactory.New.Product(ltMenu).Show;
-  FEntity := TControllerEntityFactory.New.Product.List(DataSource1);
+  TControllerFacade.New.Menu.ListBox.Product(ltMenu).Show;
+  FEntity := TControllerFacade.New.Entity.Entity.Product.List(DataSource1);
 end;
 
 initialization

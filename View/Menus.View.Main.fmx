@@ -16,8 +16,12 @@ object frmMain: TfrmMain
     TabOrder = 0
   end
   object lbVersion: TLabel
-    Position.X = 520.000000000000000000
+    Position.X = 448.000000000000000000
     Position.Y = 463.000000000000000000
+    Size.Width = 192.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
     Text = 'lbVeresion'
     TabOrder = 1
   end
